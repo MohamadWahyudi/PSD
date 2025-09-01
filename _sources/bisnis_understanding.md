@@ -8,7 +8,7 @@ Penyakit jantung merupakan salah satu penyebab kematian utama di Indonesia. Fakt
 ## Tujuan Proyek
 Proyek ini bertujuan untuk membangun model prediksi serangan jantung berdasarkan faktor risiko kesehatan penduduk Indonesia. Dengan analisis ini, diharapkan dapat:
 - Mengidentifikasi faktor risiko paling signifikan yang memengaruhi serangan jantung.
-- Mengembangkan model machine learning untuk memprediksi kemungkinan serangan jantung pada individu.
+- Mengembangkan model machine learning untuk memprediksi kemungkinan serangan jantung pada seseorang.
 - Memberikan insight yang dapat digunakan tenaga medis maupun instansi kesehatan untuk upaya pencegahan.
 
 ---
