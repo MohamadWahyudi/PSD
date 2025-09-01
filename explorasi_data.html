@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>data understanding &#8212; My sample book</title>
+    <title>explorasi data &#8212; My sample book</title>
   
   
   
@@ -58,10 +58,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'data_understanding';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'explorasi_data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="bisnis understanding" href="bisnis_understanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,9 +180,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bisnis_understanding.html">bisnis understanding</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">data understanding</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_understanding.html">data understanding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
 </ul>
 </details></li>
 </ul>
@@ -255,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata_understanding.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexplorasi_data.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +286,7 @@
       
       
       
-      <li><a href="_sources/data_understanding.ipynb" target="_blank"
+      <li><a href="_sources/explorasi_data.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>data understanding</h1>
+    <h1>explorasi data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,9 +380,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengecek-missing-values">Mengecek Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-usia-age">Distribusi Usia (Age)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-berdasarkan-gender">Heart Attack Berdasarkan Gender</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-vs-smoking-status">Heart Attack vs Smoking Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obesitas-dan-heart-attack">Obesitas dan Heart Attack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korelasi-faktor-risiko-utama">Korelasi Faktor Risiko Utama</a></li>
 </ul>
             </nav>
         </div>
@@ -393,9 +396,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="data-understanding">
-<h1>data understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
-<p>data diambil dari kaggle berikut link kagglenya <a class="reference external" href="https://www.kaggle.com/datasets/ankushpanday2/heart-attack-prediction-in-indonesia?resource=download">https://www.kaggle.com/datasets/ankushpanday2/heart-attack-prediction-in-indonesia?resource=download</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="explorasi-data">
+<h1>explorasi data<a class="headerlink" href="#explorasi-data" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -472,196 +474,89 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="informasi-dataset">
-<h2>Informasi Dataset<a class="headerlink" href="#informasi-dataset" title="Link to this heading">#</a></h2>
+<section id="distribusi-usia-age">
+<h2>Distribusi Usia (Age)<a class="headerlink" href="#distribusi-usia-age" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran dataset:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tipe data tiap kolom:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribusi Usia Pasien&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Usia&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Jumlah&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran dataset: (158355, 28)
-
-Tipe data tiap kolom:
-age                                 int64
-gender                             object
-region                             object
-income_level                       object
-hypertension                        int64
-diabetes                            int64
-cholesterol_level                   int64
-obesity                             int64
-waist_circumference                 int64
-family_history                      int64
-smoking_status                     object
-alcohol_consumption                object
-physical_activity                  object
-dietary_habits                     object
-air_pollution_exposure             object
-stress_level                       object
-sleep_hours                       float64
-blood_pressure_systolic             int64
-blood_pressure_diastolic            int64
-fasting_blood_sugar                 int64
-cholesterol_hdl                     int64
-cholesterol_ldl                     int64
-triglycerides                       int64
-EKG_results                        object
-previous_heart_disease              int64
-medication_usage                    int64
-participated_in_free_screening      int64
-heart_attack                        int64
-dtype: object
-</pre></div>
-</div>
+<img alt="_images/af331e2ff65d9b471eaead5ccf3e94caf25f4fad1e2d9f7ddccdf68514f9dfea.png" src="_images/af331e2ff65d9b471eaead5ccf3e94caf25f4fad1e2d9f7ddccdf68514f9dfea.png" />
 </div>
 </div>
 </section>
-<section id="statistik-deskriptif">
-<h2>Statistik Deskriptif<a class="headerlink" href="#statistik-deskriptif" title="Link to this heading">#</a></h2>
+<section id="heart-attack-berdasarkan-gender">
+<h2>Heart Attack Berdasarkan Gender<a class="headerlink" href="#heart-attack-berdasarkan-gender" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Statistik deskriptif:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;heart_attack&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Perbandingan Heart Attack berdasarkan Gender&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistik deskriptif:
-                  age  gender  region income_level   hypertension  \
-count   158355.000000  158355  158355       158355  158355.000000   
-unique            NaN       2       2            3            NaN   
-top               NaN    Male   Urban       Middle            NaN   
-freq              NaN   82243  103038        71230            NaN   
-mean        54.543778     NaN     NaN          NaN       0.299069   
-std         11.910897     NaN     NaN          NaN       0.457851   
-min         25.000000     NaN     NaN          NaN       0.000000   
-25%         46.000000     NaN     NaN          NaN       0.000000   
-50%         55.000000     NaN     NaN          NaN       0.000000   
-75%         63.000000     NaN     NaN          NaN       1.000000   
-max         90.000000     NaN     NaN          NaN       1.000000   
-
-             diabetes  cholesterol_level        obesity  waist_circumference  \
-count   158355.000000      158355.000000  158355.000000        158355.000000   
-unique            NaN                NaN            NaN                  NaN   
-top               NaN                NaN            NaN                  NaN   
-freq              NaN                NaN            NaN                  NaN   
-mean         0.199804         199.533264       0.249901            93.268504   
-std          0.399854          39.737565       0.432957            16.382205   
-min          0.000000         100.000000       0.000000            20.000000   
-25%          0.000000         172.000000       0.000000            82.000000   
-50%          0.000000         199.000000       0.000000            93.000000   
-75%          0.000000         226.000000       0.000000           104.000000   
-max          1.000000         350.000000       1.000000           173.000000   
-
-        family_history  ... blood_pressure_diastolic fasting_blood_sugar  \
-count    158355.000000  ...            158355.000000       158355.000000   
-unique             NaN  ...                      NaN                 NaN   
-top                NaN  ...                      NaN                 NaN   
-freq               NaN  ...                      NaN                 NaN   
-mean          0.300218  ...                79.490809          110.736762   
-std           0.458354  ...                10.002964           27.673445   
-min           0.000000  ...                37.000000           70.000000   
-25%           0.000000  ...                73.000000           89.000000   
-50%           0.000000  ...                80.000000          109.000000   
-75%           1.000000  ...                86.000000          130.000000   
-max           1.000000  ...               127.000000          230.000000   
-
-       cholesterol_hdl cholesterol_ldl  triglycerides EKG_results  \
-count    158355.000000   158355.000000  158355.000000      158355   
-unique             NaN             NaN            NaN           2   
-top                NaN             NaN            NaN      Normal   
-freq               NaN             NaN            NaN      126914   
-mean         49.491478      129.569916     149.715885         NaN   
-std           9.982634       34.913318      49.023473         NaN   
-min           8.000000      -19.000000      50.000000         NaN   
-25%          43.000000      106.000000     116.000000         NaN   
-50%          49.000000      130.000000     149.000000         NaN   
-75%          56.000000      153.000000     183.000000         NaN   
-max          93.000000      282.000000     380.000000         NaN   
-
-        previous_heart_disease  medication_usage  \
-count            158355.000000     158355.000000   
-unique                     NaN               NaN   
-top                        NaN               NaN   
-freq                       NaN               NaN   
-mean                  0.200575          0.499770   
-std                   0.400432          0.500002   
-min                   0.000000          0.000000   
-25%                   0.000000          0.000000   
-50%                   0.000000          0.000000   
-75%                   0.000000          1.000000   
-max                   1.000000          1.000000   
-
-        participated_in_free_screening   heart_attack  
-count                    158355.000000  158355.000000  
-unique                             NaN            NaN  
-top                                NaN            NaN  
-freq                               NaN            NaN  
-mean                          0.601029       0.401004  
-std                           0.489688       0.490103  
-min                           0.000000       0.000000  
-25%                           0.000000       0.000000  
-50%                           1.000000       0.000000  
-75%                           1.000000       1.000000  
-max                           1.000000       1.000000  
-
-[11 rows x 28 columns]
-</pre></div>
-</div>
+<img alt="_images/e51e469bc67e436ac0b8c855cac92ae894d1b1722242f20074547c3aa2292fc0.png" src="_images/e51e469bc67e436ac0b8c855cac92ae894d1b1722242f20074547c3aa2292fc0.png" />
 </div>
 </div>
 </section>
-<section id="mengecek-missing-values">
-<h2>Mengecek Missing Values<a class="headerlink" href="#mengecek-missing-values" title="Link to this heading">#</a></h2>
+<section id="heart-attack-vs-smoking-status">
+<h2>Heart Attack vs Smoking Status<a class="headerlink" href="#heart-attack-vs-smoking-status" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah missing values tiap kolom:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;smoking_status&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;heart_attack&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Heart Attack vs Smoking Status&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah missing values tiap kolom:
-age                                   0
-gender                                0
-region                                0
-income_level                          0
-hypertension                          0
-diabetes                              0
-cholesterol_level                     0
-obesity                               0
-waist_circumference                   0
-family_history                        0
-smoking_status                        0
-alcohol_consumption               94848
-physical_activity                     0
-dietary_habits                        0
-air_pollution_exposure                0
-stress_level                          0
-sleep_hours                           0
-blood_pressure_systolic               0
-blood_pressure_diastolic              0
-fasting_blood_sugar                   0
-cholesterol_hdl                       0
-cholesterol_ldl                       0
-triglycerides                         0
-EKG_results                           0
-previous_heart_disease                0
-medication_usage                      0
-participated_in_free_screening        0
-heart_attack                          0
-dtype: int64
-</pre></div>
-</div>
+<img alt="_images/e270c70260f2254ce6df6ab604b592590ef38f7c43029eacd57dd0fdfabf05f3.png" src="_images/e270c70260f2254ce6df6ab604b592590ef38f7c43029eacd57dd0fdfabf05f3.png" />
 </div>
 </div>
 </section>
-<div class="toctree-wrapper compound">
+<section id="obesitas-dan-heart-attack">
+<h2>Obesitas dan Heart Attack<a class="headerlink" href="#obesitas-dan-heart-attack" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;heart_attack&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;obesity&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Obesitas vs Heart Attack&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/30f6e81fedcec6d7ee0fa01751bbb3993311da5067f05cc7e7f50583e57754a9.png" src="_images/30f6e81fedcec6d7ee0fa01751bbb3993311da5067f05cc7e7f50583e57754a9.png" />
+</div>
+</div>
+</section>
+<section id="korelasi-faktor-risiko-utama">
+<h2>Korelasi Faktor Risiko Utama<a class="headerlink" href="#korelasi-faktor-risiko-utama" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;age&quot;</span><span class="p">,</span><span class="s2">&quot;cholesterol_level&quot;</span><span class="p">,</span><span class="s2">&quot;obesity&quot;</span><span class="p">,</span><span class="s2">&quot;blood_pressure_systolic&quot;</span><span class="p">,</span><span class="s2">&quot;blood_pressure_diastolic&quot;</span><span class="p">,</span><span class="s2">&quot;triglycerides&quot;</span><span class="p">,</span><span class="s2">&quot;heart_attack&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Korelasi Faktor Risiko dengan Heart Attack&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7b11787eead04d1f7a8dcb9f6004293e21769940947c47a48f8c7d15381ca694.png" src="_images/7b11787eead04d1f7a8dcb9f6004293e21769940947c47a48f8c7d15381ca694.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -694,15 +589,6 @@ dtype: int64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="bisnis_understanding.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">bisnis understanding</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -719,9 +605,11 @@ dtype: int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengecek-missing-values">Mengecek Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-usia-age">Distribusi Usia (Age)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-berdasarkan-gender">Heart Attack Berdasarkan Gender</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-vs-smoking-status">Heart Attack vs Smoking Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obesitas-dan-heart-attack">Obesitas dan Heart Attack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korelasi-faktor-risiko-utama">Korelasi Faktor Risiko Utama</a></li>
 </ul>
   </nav></div>
 
