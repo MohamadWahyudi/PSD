@@ -2,13 +2,13 @@
 
 ## Biodata
 
-- *Nama:* Mohamad Wahyudi
-- *NIM:* 230411100055
-- *Email:* mohamadwahyudi772@gmail.com  
-- *Universitas:* Universitas Trunojoyo Madura  
-- *Fakultas:* Teknik  
-- *Program Studi:* Teknik Informatika  
-- *Kelas:* Proyek Sains Data B  
+- **Nama:** Mohamad Wahyudi
+- **NIM:** 230411100055
+- **Email:** mohamadwahyudi772@gmail.com  
+- **Universitas:** Universitas Trunojoyo Madura  
+- **Fakultas:** Teknik  
+- **Program Studi:** Teknik Informatika  
+- **Kelas:** Proyek Sains Data B  
 
 ---
 
