@@ -62,7 +62,6 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Explorasi" href="explorasi.html" />
-    <link rel="prev" title="Bisnis Understanding" href="bisnis_understanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,9 +180,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="bisnis_understanding.html">Bisnis Understanding</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Data Understanding</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="explorasi.html">Explorasi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprosesing.html"><strong>Preprocessing</strong></a></li>
 </ul>
 </details></li>
 </ul>
@@ -495,7 +494,7 @@ next saja jika sudah lalu akan masuk ke popup selanjutnya dan masukan username d
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Iris.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/Iris.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 
 <span class="c1"># tampilkan info dataset</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -521,37 +520,68 @@ next saja jika sudah lalu akan masuk ke popup selanjutnya dan masukan username d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Id  SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm      Species
-0   1            5.1           3.5            1.4           0.2  Iris-setosa
-1   2            4.9           3.0            1.4           0.2  Iris-setosa
-2   3            4.7           3.2            1.3           0.2  Iris-setosa
-3   4            4.6           3.1            1.5           0.2  Iris-setosa
-4   5            5.0           3.6            1.4           0.2  Iris-setosa
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/Iris.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># tampilkan info dataset</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-Info Dataset:
-&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 150 entries, 0 to 149
-Data columns (total 6 columns):
- #   Column         Non-Null Count  Dtype  
----  ------         --------------  -----  
- 0   Id             150 non-null    int64  
- 1   SepalLengthCm  150 non-null    float64
- 2   SepalWidthCm   150 non-null    float64
- 3   PetalLengthCm  150 non-null    float64
- 4   PetalWidthCm   150 non-null    float64
- 5   Species        150 non-null    object 
-dtypes: float64(4), int64(1), object(1)
-memory usage: 7.2+ KB
-None
+<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
 
-Ringkasan Tipe Data:
-            Kolom Tipe Data                                         Deskripsi
-0             Id     int64                                           ID unik
-1  SepalLengthCm   float64                                Panjang sepal (cm)
-2   SepalWidthCm   float64                                  Lebar sepal (cm)
-3  PetalLengthCm   float64                                Panjang petal (cm)
-4   PetalWidthCm   float64                                  Lebar petal (cm)
-5        Species    object  Jenis bunga iris (Setosa, Versicolor, Virginica)
+<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/Iris.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -570,12 +600,7 @@ Ringkasan Tipe Data:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Missing Value per Kolom:
-Id               0
-SepalLengthCm    0
-SepalWidthCm     0
-PetalLengthCm    0
-PetalWidthCm     0
-Species          0
+Id;SepalLengthCm;SepalWidthCm;PetalLengthCm;PetalWidthCm;Species    0
 dtype: int64
 
 Jumlah duplikat: 0
@@ -628,14 +653,14 @@ Iris-virginica     50
 Name: count, dtype: int64
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3451/3345670428.py:6: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipython-input-3345670428.py:6: FutureWarning: 
 
 Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
 
   sns.countplot(data=df, x=&quot;Species&quot;, palette=&quot;Set2&quot;)
 </pre></div>
 </div>
-<img alt="_images/2b593dbcf24a59948ad5e23b315b9e9f69d9f0bc816e577cd2670cf0e94e884c.png" src="_images/2b593dbcf24a59948ad5e23b315b9e9f69d9f0bc816e577cd2670cf0e94e884c.png" />
+<img alt="_images/6d81d0f9b8fcb5cdfe7924593ceb28e9074237e67604182045a30dee92917f04.png" src="_images/6d81d0f9b8fcb5cdfe7924593ceb28e9074237e67604182045a30dee92917f04.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -649,7 +674,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ea109032102ff6289f15d1ba98871c301285603f5afbc6c94fa53384a0f8cdcd.png" src="_images/ea109032102ff6289f15d1ba98871c301285603f5afbc6c94fa53384a0f8cdcd.png" />
+<img alt="_images/8a8d2b7e7f06e52cbaa9207fbef48000e96f5a9e1046421ab47bd8e4344bd348.png" src="_images/8a8d2b7e7f06e52cbaa9207fbef48000e96f5a9e1046421ab47bd8e4344bd348.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -666,7 +691,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/27c52dcb42c5a505756fd0431fff74a8a7d033af82174e69385374998886ab72.png" src="_images/27c52dcb42c5a505756fd0431fff74a8a7d033af82174e69385374998886ab72.png" />
+<img alt="_images/88fdd12539d0c3e5abdef3411fa5efb6c205da0a708adca37df77a391b42efdd.png" src="_images/88fdd12539d0c3e5abdef3411fa5efb6c205da0a708adca37df77a391b42efdd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -683,7 +708,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5950cb313624e10941af5500cc59782c31b82b4b3f1f89f327a32981b1d31bf4.png" src="_images/5950cb313624e10941af5500cc59782c31b82b4b3f1f89f327a32981b1d31bf4.png" />
+<img alt="_images/59b218ec5ccb180d1a6db2837897c97f2536dd5aae530d2ee7ae50f3d6afba9f.png" src="_images/59b218ec5ccb180d1a6db2837897c97f2536dd5aae530d2ee7ae50f3d6afba9f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -723,6 +748,697 @@ Outlier pada PetalWidthCm: 0 data
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># 1. Baca dataset iris (pastikan file iris.csv ada di folder yang sama dengan notebook)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/Iris.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Ambil hanya kolom numerik</span>
+<span class="n">numeric_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
+
+<span class="c1"># 3. Hitung Z-Score</span>
+<span class="n">z_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">numeric_data</span><span class="p">))</span>
+
+<span class="c1"># 4. Deteksi outlier (threshold = 3)</span>
+<span class="n">outliers_zscore</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[(</span><span class="n">z_scores</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># 5. Print jumlah dan tampilkan data outlier</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah outlier dengan Z-Score: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers_zscore</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">outliers_zscore</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah outlier dengan Z-Score: 0
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-ba9f715e-6c37-4942-aaab-be993d9b0ab4" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id;SepalLengthCm;SepalWidthCm;PetalLengthCm;PetalWidthCm;Species</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ba9f715e-6c37-4942-aaab-be993d9b0ab4')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-ba9f715e-6c37-4942-aaab-be993d9b0ab4 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-ba9f715e-6c37-4942-aaab-be993d9b0ab4');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+<ol class="arabic">
+<li><p>KNN</p>
+<ul>
+<li><p>Prinsip kerja:</p>
+<p>KNN untuk deteksi outlier menghitung jarak rata-rata ke k tetangga terdekat. Jika jarak suatu titik ke tetangganya jauh lebih besar dibanding data lain, maka titik itu dianggap outlier.</p>
+</li>
+<li><p>Kelebihan:</p>
+<p>Konsep sederhana dan mudah dipahami, Cocok untuk data berdimensi rendah hingga menengah.</p>
+</li>
+<li><p>Kelemahan:</p>
+<p>Kurang efektif di data berdimensi tinggi (curse of dimensionality), Memerlukan perhitungan jarak yang cukup mahal pada dataset besar.</p>
+</li>
+<li><p>Output:</p>
+<p>a. Anomaly = 1 menunjukkan data jauh dari tetangga terdekatnya → kandidat outlier.</p>
+<p>b. Anomaly_Score semakin besar berarti semakin jauh jarak dari tetangga.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Ganti nama file sesuai dengan yang Anda upload</span>
+<span class="n">df_knn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;KNN.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan 5 baris pertama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_knn</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               class  petal_length  petal_width  sepal_length  sepal_width  Anomaly  Anomaly_Score
+0        Iris-setosa           1.0          0.2           4.6          3.6        0       0.565685
+1        Iris-setosa           1.1          0.1           4.3          3.0        0       0.500000
+2        Iris-setosa           1.2          0.2           5.0          3.2        0       0.346410
+3        Iris-setosa           1.2          0.2           5.8          4.0        0       0.583095
+4        Iris-setosa           1.3          0.2           4.4          3.0        0       0.300000
+5        Iris-setosa           1.3          0.2           4.4          3.2        0       0.316228
+6        Iris-setosa           1.3          0.2           4.7          3.2        0       0.264575
+7        Iris-setosa           1.3          0.2           5.5          3.5        0       0.360555
+8        Iris-setosa           1.3          0.3           4.5          2.3        1       0.793726
+9        Iris-setosa           1.3          0.3           5.0          3.5        0       0.244949
+10       Iris-setosa           1.3          0.4           5.4          3.9        0       0.400000
+11       Iris-setosa           1.4          0.1           4.8          3.0        0       0.200000
+12       Iris-setosa           1.4          0.2           4.4          2.9        0       0.360555
+13       Iris-setosa           1.4          0.2           4.6          3.2        0       0.223607
+14       Iris-setosa           1.4          0.2           4.9          3.0        0       0.173205
+15       Iris-setosa           1.4          0.2           5.0          3.3        0       0.223607
+16       Iris-setosa           1.4          0.2           5.0          3.6        0       0.244949
+17       Iris-setosa           1.4          0.2           5.1          3.5        0       0.141421
+18       Iris-setosa           1.4          0.2           5.2          3.4        0       0.223607
+19       Iris-setosa           1.4          0.2           5.5          4.2        0       0.479583
+20       Iris-setosa           1.4          0.3           4.6          3.4        0       0.316228
+21       Iris-setosa           1.4          0.3           4.8          3.0        0       0.264575
+22       Iris-setosa           1.4          0.3           5.1          3.5        0       0.173205
+23       Iris-setosa           1.5          0.1           4.9          3.1        0       0.173205
+24       Iris-setosa           1.5          0.1           5.2          4.1        0       0.458258
+25       Iris-setosa           1.5          0.2           4.6          3.1        0       0.264575
+26       Iris-setosa           1.5          0.2           5.0          3.4        0       0.223607
+27       Iris-setosa           1.5          0.2           5.1          3.4        0       0.173205
+28       Iris-setosa           1.5          0.2           5.2          3.5        0       0.223607
+29       Iris-setosa           1.5          0.2           5.3          3.7        0       0.282843
+30       Iris-setosa           1.5          0.2           5.4          3.7        0       0.331663
+31       Iris-setosa           1.5          0.3           5.1          3.8        0       0.316228
+32       Iris-setosa           1.5          0.4           5.1          3.7        0       0.282843
+33       Iris-setosa           1.5          0.4           5.4          3.4        0       0.346410
+34       Iris-setosa           1.5          0.4           5.7          4.4        0       0.640313
+35       Iris-setosa           1.6          0.2           4.7          3.2        0       0.264575
+36       Iris-setosa           1.6          0.2           4.8          3.1        0       0.223607
+37       Iris-setosa           1.6          0.2           4.8          3.4        0       0.300000
+38       Iris-setosa           1.6          0.2           5.0          3.0        0       0.223607
+39       Iris-setosa           1.6          0.2           5.1          3.8        0       0.331662
+40       Iris-setosa           1.6          0.4           5.0          3.4        0       0.264575
+41       Iris-setosa           1.6          0.6           5.0          3.5        0       0.424264
+42       Iris-setosa           1.7          0.2           5.4          3.4        0       0.360555
+43       Iris-setosa           1.7          0.3           5.7          3.8        0       0.519615
+44       Iris-setosa           1.7          0.4           5.4          3.9        0       0.387299
+45       Iris-setosa           1.7          0.5           5.1          3.3        0       0.387299
+46       Iris-setosa           1.9          0.2           4.8          3.4        0       0.447213
+47       Iris-setosa           1.9          0.4           5.1          3.8        0       0.479583
+48   Iris-versicolor           3.0          1.1           5.1          2.5        1       0.818535
+49   Iris-versicolor           3.3          1.0           4.9          2.4        1       0.787401
+50   Iris-versicolor           3.3          1.0           5.0          2.3        0       0.721110
+51   Iris-versicolor           3.5          1.0           5.0          2.0        0       0.721110
+52   Iris-versicolor           3.5          1.0           5.7          2.6        0       0.469042
+53   Iris-versicolor           3.6          1.3           5.6          2.9        0       0.538517
+54   Iris-versicolor           3.7          1.0           5.5          2.4        0       0.435890
+55   Iris-versicolor           3.8          1.1           5.5          2.4        0       0.424264
+56   Iris-versicolor           3.9          1.1           5.6          2.5        0       0.300000
+57   Iris-versicolor           3.9          1.2           5.8          2.7        0       0.346410
+58   Iris-versicolor           3.9          1.4           5.2          2.7        0       0.538517
+59   Iris-versicolor           4.0          1.0           6.0          2.2        0       0.583095
+60   Iris-versicolor           4.0          1.2           5.8          2.6        0       0.316228
+61   Iris-versicolor           4.0          1.3           5.5          2.3        0       0.435890
+62   Iris-versicolor           4.0          1.3           5.5          2.5        0       0.331663
+63   Iris-versicolor           4.0          1.3           6.1          2.8        0       0.412311
+64   Iris-versicolor           4.1          1.0           5.8          2.7        0       0.374166
+65   Iris-versicolor           4.1          1.3           5.6          3.0        0       0.374166
+66   Iris-versicolor           4.1          1.3           5.7          2.8        0       0.264575
+67   Iris-versicolor           4.2          1.2           5.7          3.0        0       0.360555
+68   Iris-versicolor           4.2          1.3           5.6          2.7        0       0.316228
+69   Iris-versicolor           4.2          1.3           5.7          2.9        0       0.300000
+70   Iris-versicolor           4.2          1.5           5.9          3.0        0       0.374166
+71   Iris-versicolor           4.3          1.3           6.2          2.9        0       0.387298
+72   Iris-versicolor           4.3          1.3           6.4          2.9        0       0.387298
+73   Iris-versicolor           4.4          1.2           5.5          2.6        0       0.424264
+74   Iris-versicolor           4.4          1.3           6.3          2.3        0       0.616442
+75   Iris-versicolor           4.4          1.4           6.6          3.0        0       0.316228
+76   Iris-versicolor           4.4          1.4           6.7          3.1        0       0.387298
+77   Iris-versicolor           4.5          1.3           5.7          2.8        0       0.374166
+78   Iris-versicolor           4.5          1.5           5.4          3.0        0       0.509902
+79   Iris-versicolor           4.5          1.5           5.6          3.0        0       0.424264
+80   Iris-versicolor           4.5          1.5           6.0          2.9        0       0.374166
+81   Iris-versicolor           4.5          1.5           6.2          2.2        0       0.728011
+82   Iris-versicolor           4.5          1.5           6.4          3.2        0       0.387298
+83   Iris-versicolor           4.5          1.6           6.0          3.4        0       0.509902
+84   Iris-versicolor           4.6          1.3           6.6          2.9        0       0.316228
+85   Iris-versicolor           4.6          1.4           6.1          3.0        0       0.387298
+86   Iris-versicolor           4.6          1.5           6.5          2.8        0       0.387298
+87   Iris-versicolor           4.7          1.2           6.1          2.8        0       0.458258
+88   Iris-versicolor           4.7          1.4           6.1          2.9        0       0.435890
+89   Iris-versicolor           4.7          1.4           7.0          3.2        0       0.519615
+90   Iris-versicolor           4.7          1.5           6.7          3.1        0       0.346410
+91   Iris-versicolor           4.7          1.6           6.3          3.3        0       0.469042
+92   Iris-versicolor           4.8          1.4           6.8          2.8        0       0.424264
+93   Iris-versicolor           4.8          1.8           5.9          3.2        0       0.547723
+94   Iris-versicolor           4.9          1.5           6.3          2.5        0       0.509902
+95   Iris-versicolor           4.9          1.5           6.9          3.1        0       0.509902
+96   Iris-versicolor           5.0          1.7           6.7          3.0        0       0.556777
+97   Iris-versicolor           5.1          1.6           6.0          2.7        0       0.624500
+98    Iris-virginica           4.5          1.7           4.9          2.5        1       1.249000
+99    Iris-virginica           4.8          1.8           6.0          3.0        0       0.479583
+100   Iris-virginica           4.8          1.8           6.2          2.8        0       0.435890
+101   Iris-virginica           4.9          1.8           6.1          3.0        0       0.458258
+102   Iris-virginica           4.9          1.8           6.3          2.7        0       0.424264
+103   Iris-virginica           4.9          2.0           5.6          2.8        0       0.489898
+104   Iris-virginica           5.0          1.5           6.0          2.2        0       0.678233
+105   Iris-virginica           5.0          1.9           6.3          2.5        0       0.547723
+106   Iris-virginica           5.0          2.0           5.7          2.5        0       0.583095
+107   Iris-virginica           5.1          1.5           6.3          2.8        0       0.509902
+108   Iris-virginica           5.1          1.8           5.9          3.0        0       0.458258
+109   Iris-virginica           5.1          1.9           5.8          2.7        0       0.479583
+110   Iris-virginica           5.1          2.0           6.5          3.2        0       0.489898
+111   Iris-virginica           5.1          2.3           6.9          3.1        0       0.519615
+112   Iris-virginica           5.1          2.4           5.8          2.8        0       0.640313
+113   Iris-virginica           5.2          2.0           6.5          3.0        0       0.387298
+114   Iris-virginica           5.2          2.3           6.7          3.0        0       0.374166
+115   Iris-virginica           5.3          1.9           6.4          2.7        0       0.387298
+116   Iris-virginica           5.3          2.3           6.4          3.2        0       0.387298
+117   Iris-virginica           5.4          2.1           6.9          3.1        0       0.412311
+118   Iris-virginica           5.4          2.3           6.2          3.4        0       0.624500
+119   Iris-virginica           5.5          1.8           6.4          3.1        0       0.458257
+120   Iris-virginica           5.5          1.8           6.5          3.0        0       0.387298
+121   Iris-virginica           5.5          2.1           6.8          3.0        0       0.374166
+122   Iris-virginica           5.6          1.4           6.1          2.6        0       0.714143
+123   Iris-virginica           5.6          1.8           6.3          2.9        0       0.424264
+124   Iris-virginica           5.6          2.1           6.4          2.8        0       0.387298
+125   Iris-virginica           5.6          2.2           6.4          2.8        0       0.469041
+126   Iris-virginica           5.6          2.4           6.3          3.4        0       0.500000
+127   Iris-virginica           5.6          2.4           6.7          3.1        0       0.360555
+128   Iris-virginica           5.7          2.1           6.7          3.3        0       0.387298
+129   Iris-virginica           5.7          2.3           6.9          3.2        0       0.360555
+130   Iris-virginica           5.7          2.5           6.7          3.3        0       0.435890
+131   Iris-virginica           5.8          1.6           7.2          3.0        0       0.707107
+132   Iris-virginica           5.8          1.8           6.7          2.5        0       0.624500
+133   Iris-virginica           5.8          2.2           6.5          3.0        0       0.387298
+134   Iris-virginica           5.9          2.1           7.1          3.0        0       0.500000
+135   Iris-virginica           5.9          2.3           6.8          3.2        0       0.387298
+136   Iris-virginica           6.0          1.8           7.2          3.2        0       0.648074
+137   Iris-virginica           6.0          2.5           6.3          3.3        0       0.608276
+138   Iris-virginica           6.1          1.9           7.4          2.8        0       0.538516
+139   Iris-virginica           6.1          2.3           7.7          3.0        0       0.700000
+140   Iris-virginica           6.1          2.5           7.2          3.6        1       0.806226
+141   Iris-virginica           6.3          1.8           7.3          2.9        0       0.556776
+142   Iris-virginica           6.4          2.0           7.9          3.8        1       1.024695
+143   Iris-virginica           6.6          2.1           7.6          3.0        0       0.608276
+144   Iris-virginica           6.7          2.0           7.7          2.8        0       0.700000
+145   Iris-virginica           6.7          2.2           7.7          3.8        1       1.019804
+146   Iris-virginica           6.9          2.3           7.7          2.6        1       0.964365
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>ABOD</p>
+<ul>
+<li><p>Prinsip kerja:</p>
+<p>ABOD mengukur sudut antara vektor-vektor yang dibentuk oleh suatu titik dengan titik-titik lain. Jika variasi sudut kecil (data cenderung ke satu arah), maka data itu cenderung menjadi outlier.</p>
+</li>
+<li><p>Kelebihan:</p>
+<p>Lebih stabil dibanding LOF/KNN pada data berdimensi tinggi, Tidak hanya mengandalkan jarak, tetapi juga arah distribusi data.</p>
+</li>
+<li><p>Kelemahan:</p>
+<p>Komputasinya lebih berat dibanding LOF dan KNN, Lebih lambat pada dataset besar.</p>
+</li>
+<li><p>Output:</p>
+<p>a. Anomaly = 1 berarti distribusi sudut titik tersebut tidak mengikuti pola mayoritas data.</p>
+<p>b. Anomaly_Score menunjukkan tingkat keanehan (semakin besar → semakin outlier).</p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Ganti nama file sesuai dengan yang Anda upload</span>
+<span class="n">df_abod</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ABOD.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan 5 baris pertama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_abod</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               class  petal_length  petal_width  sepal_length  sepal_width  Anomaly  Anomaly_Score
+0        Iris-setosa           1.0          0.2           4.6          3.6        0      -0.771745
+1        Iris-setosa           1.1          0.1           4.3          3.0        0      -6.211703
+2        Iris-setosa           1.2          0.2           5.0          3.2        0     -22.260507
+3        Iris-setosa           1.2          0.2           5.8          4.0        0      -0.971267
+4        Iris-setosa           1.3          0.2           4.4          3.0        0    -128.152246
+5        Iris-setosa           1.3          0.2           4.4          3.2        0     -44.802539
+6        Iris-setosa           1.3          0.2           4.7          3.2        0     -93.422000
+7        Iris-setosa           1.3          0.2           5.5          3.5        0      -3.638189
+8        Iris-setosa           1.3          0.3           4.5          2.3        1      -0.088998
+9        Iris-setosa           1.3          0.3           5.0          3.5        0     -69.753133
+10       Iris-setosa           1.3          0.4           5.4          3.9        0      -7.147108
+11       Iris-setosa           1.4          0.1           4.8          3.0        0    -172.917052
+12       Iris-setosa           1.4          0.2           4.4          2.9        0     -42.380452
+13       Iris-setosa           1.4          0.2           4.6          3.2        0    -147.689837
+14       Iris-setosa           1.4          0.2           4.9          3.0        0    -400.000797
+15       Iris-setosa           1.4          0.2           5.0          3.3        0    -371.839912
+16       Iris-setosa           1.4          0.2           5.0          3.6        0     -82.176215
+17       Iris-setosa           1.4          0.2           5.1          3.5        0    -556.251526
+18       Iris-setosa           1.4          0.2           5.2          3.4        0     -49.694566
+19       Iris-setosa           1.4          0.2           5.5          4.2        0      -8.122338
+20       Iris-setosa           1.4          0.3           4.6          3.4        0     -29.098909
+21       Iris-setosa           1.4          0.3           4.8          3.0        0     -29.209250
+22       Iris-setosa           1.4          0.3           5.1          3.5        0    -501.235116
+23       Iris-setosa           1.5          0.1           4.9          3.1        0    -109.739714
+24       Iris-setosa           1.5          0.1           5.2          4.1        0     -12.646257
+25       Iris-setosa           1.5          0.2           4.6          3.1        0     -99.229209
+26       Iris-setosa           1.5          0.2           5.0          3.4        0    -248.583994
+27       Iris-setosa           1.5          0.2           5.1          3.4        0    -836.807489
+28       Iris-setosa           1.5          0.2           5.2          3.5        0     -49.694571
+29       Iris-setosa           1.5          0.2           5.3          3.7        0    -317.322242
+30       Iris-setosa           1.5          0.2           5.4          3.7        0    -184.450043
+31       Iris-setosa           1.5          0.3           5.1          3.8        0    -109.424686
+32       Iris-setosa           1.5          0.4           5.1          3.7        0     -73.422177
+33       Iris-setosa           1.5          0.4           5.4          3.4        0     -11.222207
+34       Iris-setosa           1.5          0.4           5.7          4.4        0      -0.592311
+35       Iris-setosa           1.6          0.2           4.7          3.2        0    -147.451620
+36       Iris-setosa           1.6          0.2           4.8          3.1        0    -523.999573
+37       Iris-setosa           1.6          0.2           4.8          3.4        0     -49.662768
+38       Iris-setosa           1.6          0.2           5.0          3.0        0     -29.610068
+39       Iris-setosa           1.6          0.2           5.1          3.8        0     -33.511627
+40       Iris-setosa           1.6          0.4           5.0          3.4        0    -138.118989
+41       Iris-setosa           1.6          0.6           5.0          3.5        0     -15.430668
+42       Iris-setosa           1.7          0.2           5.4          3.4        0      -4.052613
+43       Iris-setosa           1.7          0.3           5.7          3.8        0      -1.787829
+44       Iris-setosa           1.7          0.4           5.4          3.9        0     -15.175274
+45       Iris-setosa           1.7          0.5           5.1          3.3        0     -18.317538
+46       Iris-setosa           1.9          0.2           4.8          3.4        0      -2.257558
+47       Iris-setosa           1.9          0.4           5.1          3.8        0      -3.287215
+48   Iris-versicolor           3.0          1.1           5.1          2.5        0      -2.889912
+49   Iris-versicolor           3.3          1.0           4.9          2.4        0     -14.745548
+50   Iris-versicolor           3.3          1.0           5.0          2.3        0     -18.492964
+51   Iris-versicolor           3.5          1.0           5.0          2.0        0      -2.797275
+52   Iris-versicolor           3.5          1.0           5.7          2.6        0      -4.754998
+53   Iris-versicolor           3.6          1.3           5.6          2.9        0      -2.706530
+54   Iris-versicolor           3.7          1.0           5.5          2.4        0     -82.512428
+55   Iris-versicolor           3.8          1.1           5.5          2.4        0    -153.650548
+56   Iris-versicolor           3.9          1.1           5.6          2.5        0    -125.610741
+57   Iris-versicolor           3.9          1.2           5.8          2.7        0     -34.407603
+58   Iris-versicolor           3.9          1.4           5.2          2.7        0      -0.885601
+59   Iris-versicolor           4.0          1.0           6.0          2.2        1      -0.289391
+60   Iris-versicolor           4.0          1.2           5.8          2.6        0     -18.646376
+61   Iris-versicolor           4.0          1.3           5.5          2.3        0      -7.025612
+62   Iris-versicolor           4.0          1.3           5.5          2.5        0     -43.775604
+63   Iris-versicolor           4.0          1.3           6.1          2.8        0     -14.533813
+64   Iris-versicolor           4.1          1.0           5.8          2.7        0      -8.098383
+65   Iris-versicolor           4.1          1.3           5.6          3.0        0     -46.559514
+66   Iris-versicolor           4.1          1.3           5.7          2.8        0    -195.243368
+67   Iris-versicolor           4.2          1.2           5.7          3.0        0     -53.160465
+68   Iris-versicolor           4.2          1.3           5.6          2.7        0    -135.797000
+69   Iris-versicolor           4.2          1.3           5.7          2.9        0    -175.188759
+70   Iris-versicolor           4.2          1.5           5.9          3.0        0     -22.288318
+71   Iris-versicolor           4.3          1.3           6.2          2.9        0     -29.977804
+72   Iris-versicolor           4.3          1.3           6.4          2.9        0     -61.709675
+73   Iris-versicolor           4.4          1.2           5.5          2.6        0      -9.626586
+74   Iris-versicolor           4.4          1.3           6.3          2.3        0      -4.201485
+75   Iris-versicolor           4.4          1.4           6.6          3.0        0     -70.168193
+76   Iris-versicolor           4.4          1.4           6.7          3.1        0     -34.913826
+77   Iris-versicolor           4.5          1.3           5.7          2.8        0     -14.053024
+78   Iris-versicolor           4.5          1.5           5.4          3.0        0      -3.127325
+79   Iris-versicolor           4.5          1.5           5.6          3.0        0     -32.856739
+80   Iris-versicolor           4.5          1.5           6.0          2.9        0     -48.025606
+81   Iris-versicolor           4.5          1.5           6.2          2.2        0      -0.474763
+82   Iris-versicolor           4.5          1.5           6.4          3.2        0     -30.170764
+83   Iris-versicolor           4.5          1.6           6.0          3.4        0      -1.936603
+84   Iris-versicolor           4.6          1.3           6.6          2.9        0     -22.245589
+85   Iris-versicolor           4.6          1.4           6.1          3.0        0     -52.162724
+86   Iris-versicolor           4.6          1.5           6.5          2.8        0     -12.224966
+87   Iris-versicolor           4.7          1.2           6.1          2.8        0     -13.299496
+88   Iris-versicolor           4.7          1.4           6.1          2.9        0     -55.142796
+89   Iris-versicolor           4.7          1.4           7.0          3.2        0      -4.656540
+90   Iris-versicolor           4.7          1.5           6.7          3.1        0     -34.914196
+91   Iris-versicolor           4.7          1.6           6.3          3.3        0     -10.795772
+92   Iris-versicolor           4.8          1.4           6.8          2.8        0      -9.950307
+93   Iris-versicolor           4.8          1.8           5.9          3.2        0      -0.497850
+94   Iris-versicolor           4.9          1.5           6.3          2.5        0      -3.058709
+95   Iris-versicolor           4.9          1.5           6.9          3.1        0     -17.993484
+96   Iris-versicolor           5.0          1.7           6.7          3.0        0      -2.559132
+97   Iris-versicolor           5.1          1.6           6.0          2.7        0      -1.542130
+98    Iris-virginica           4.5          1.7           4.9          2.5        1      -0.015840
+99    Iris-virginica           4.8          1.8           6.0          3.0        0     -23.745356
+100   Iris-virginica           4.8          1.8           6.2          2.8        0     -86.377998
+101   Iris-virginica           4.9          1.8           6.1          3.0        0     -34.766906
+102   Iris-virginica           4.9          1.8           6.3          2.7        0     -59.687493
+103   Iris-virginica           4.9          2.0           5.6          2.8        0      -9.716904
+104   Iris-virginica           5.0          1.5           6.0          2.2        1      -0.156213
+105   Iris-virginica           5.0          1.9           6.3          2.5        0      -8.489224
+106   Iris-virginica           5.0          2.0           5.7          2.5        0     -13.147643
+107   Iris-virginica           5.1          1.5           6.3          2.8        0      -2.200715
+108   Iris-virginica           5.1          1.8           5.9          3.0        0     -19.286172
+109   Iris-virginica           5.1          1.9           5.8          2.7        0     -27.308761
+110   Iris-virginica           5.1          2.0           6.5          3.2        0      -5.631345
+111   Iris-virginica           5.1          2.3           6.9          3.1        0      -2.388435
+112   Iris-virginica           5.1          2.4           5.8          2.8        0      -0.385082
+113   Iris-virginica           5.2          2.0           6.5          3.0        0     -20.571707
+114   Iris-virginica           5.2          2.3           6.7          3.0        0     -13.831460
+115   Iris-virginica           5.3          1.9           6.4          2.7        0     -18.274176
+116   Iris-virginica           5.3          2.3           6.4          3.2        0     -26.426568
+117   Iris-virginica           5.4          2.1           6.9          3.1        0     -20.618554
+118   Iris-virginica           5.4          2.3           6.2          3.4        0      -6.345400
+119   Iris-virginica           5.5          1.8           6.4          3.1        0     -10.907458
+120   Iris-virginica           5.5          1.8           6.5          3.0        0     -19.780154
+121   Iris-virginica           5.5          2.1           6.8          3.0        0      -9.339991
+122   Iris-virginica           5.6          1.4           6.1          2.6        1      -0.157793
+123   Iris-virginica           5.6          1.8           6.3          2.9        0     -18.710014
+124   Iris-virginica           5.6          2.1           6.4          2.8        0    -133.135232
+125   Iris-virginica           5.6          2.2           6.4          2.8        0     -80.683885
+126   Iris-virginica           5.6          2.4           6.3          3.4        0     -20.016367
+127   Iris-virginica           5.6          2.4           6.7          3.1        0     -20.336172
+128   Iris-virginica           5.7          2.1           6.7          3.3        0      -4.853317
+129   Iris-virginica           5.7          2.3           6.9          3.2        0     -13.279455
+130   Iris-virginica           5.7          2.5           6.7          3.3        0     -14.765497
+131   Iris-virginica           5.8          1.6           7.2          3.0        0      -1.895011
+132   Iris-virginica           5.8          1.8           6.7          2.5        1      -0.084224
+133   Iris-virginica           5.8          2.2           6.5          3.0        0     -27.156303
+134   Iris-virginica           5.9          2.1           7.1          3.0        0     -11.911808
+135   Iris-virginica           5.9          2.3           6.8          3.2        0      -7.822182
+136   Iris-virginica           6.0          1.8           7.2          3.2        0      -3.068633
+137   Iris-virginica           6.0          2.5           6.3          3.3        0      -0.364475
+138   Iris-virginica           6.1          1.9           7.4          2.8        0      -3.872348
+139   Iris-virginica           6.1          2.3           7.7          3.0        0      -0.781939
+140   Iris-virginica           6.1          2.5           7.2          3.6        0      -0.612383
+141   Iris-virginica           6.3          1.8           7.3          2.9        0      -4.748133
+142   Iris-virginica           6.4          2.0           7.9          3.8        1      -0.137417
+143   Iris-virginica           6.6          2.1           7.6          3.0        0      -4.738622
+144   Iris-virginica           6.7          2.0           7.7          2.8        0      -5.161529
+145   Iris-virginica           6.7          2.2           7.7          3.8        1      -0.129286
+146   Iris-virginica           6.9          2.3           7.7          2.6        0      -0.692992
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic" start="3">
+<li><p>LOF</p>
+<ul>
+<li><p>Prinsip kerja:</p>
+<p>LOF membandingkan kepadatan lokal suatu titik dengan tetangganya.Jika suatu data memiliki kepadatan jauh lebih rendah dibanding lingkungan sekitarnya, maka data tersebut dianggap outlier.</p>
+</li>
+<li><p>Kelebihan:</p>
+<p>Bagus untuk data dengan distribusi tidak seragam, Mampu mendeteksi outlier yang “tersembunyi” di daerah padat.</p>
+</li>
+<li><p>Kelemahan:</p>
+<p>Sensitif terhadap parameter jumlah tetangga (k), Bisa salah deteksi jika data terlalu sedikit.</p>
+</li>
+<li><p>Output:</p>
+<p>a. Anomaly = 1 → data dianggap outlier.</p>
+<p>b. Anomaly_Score → semakin tinggi nilainya, semakin kuat indikasi data tersebut outlier.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Ganti nama file sesuai dengan yang Anda upload</span>
+<span class="n">df_lof</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;LOF.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan 5 baris pertama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_lof</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               class  petal_length  petal_width  sepal_length  sepal_width  Anomaly  Anomaly_Score
+0        Iris-setosa           1.0          0.2           4.6          3.6        0       1.294602
+1        Iris-setosa           1.1          0.1           4.3          3.0        0       1.326518
+2        Iris-setosa           1.2          0.2           5.0          3.2        0       0.972286
+3        Iris-setosa           1.2          0.2           5.8          4.0        0       1.463125
+4        Iris-setosa           1.3          0.2           4.4          3.0        0       1.134884
+5        Iris-setosa           1.3          0.2           4.4          3.2        0       1.123400
+6        Iris-setosa           1.3          0.2           4.7          3.2        0       1.019841
+7        Iris-setosa           1.3          0.2           5.5          3.5        0       1.073003
+8        Iris-setosa           1.3          0.3           4.5          2.3        1       1.777233
+9        Iris-setosa           1.3          0.3           5.0          3.5        0       0.961750
+10       Iris-setosa           1.3          0.4           5.4          3.9        0       1.142666
+11       Iris-setosa           1.4          0.1           4.8          3.0        0       1.023249
+12       Iris-setosa           1.4          0.2           4.4          2.9        0       1.176536
+13       Iris-setosa           1.4          0.2           4.6          3.2        0       1.041895
+14       Iris-setosa           1.4          0.2           4.9          3.0        0       1.008758
+15       Iris-setosa           1.4          0.2           5.0          3.3        0       0.979321
+16       Iris-setosa           1.4          0.2           5.0          3.6        0       0.958473
+17       Iris-setosa           1.4          0.2           5.1          3.5        0       0.976302
+18       Iris-setosa           1.4          0.2           5.2          3.4        0       0.974209
+19       Iris-setosa           1.4          0.2           5.5          4.2        0       1.342155
+20       Iris-setosa           1.4          0.3           4.6          3.4        0       1.019063
+21       Iris-setosa           1.4          0.3           4.8          3.0        0       1.022798
+22       Iris-setosa           1.4          0.3           5.1          3.5        0       0.978341
+23       Iris-setosa           1.5          0.1           4.9          3.1        0       0.962161
+24       Iris-setosa           1.5          0.1           5.2          4.1        0       1.209632
+25       Iris-setosa           1.5          0.2           4.6          3.1        0       1.049882
+26       Iris-setosa           1.5          0.2           5.0          3.4        0       0.971696
+27       Iris-setosa           1.5          0.2           5.1          3.4        0       0.980025
+28       Iris-setosa           1.5          0.2           5.2          3.5        0       0.978781
+29       Iris-setosa           1.5          0.2           5.3          3.7        0       1.015134
+30       Iris-setosa           1.5          0.2           5.4          3.7        0       1.037480
+31       Iris-setosa           1.5          0.3           5.1          3.8        0       1.004170
+32       Iris-setosa           1.5          0.4           5.1          3.7        0       0.997860
+33       Iris-setosa           1.5          0.4           5.4          3.4        0       0.997495
+34       Iris-setosa           1.5          0.4           5.7          4.4        1       1.653626
+35       Iris-setosa           1.6          0.2           4.7          3.2        0       1.002472
+36       Iris-setosa           1.6          0.2           4.8          3.1        0       0.980617
+37       Iris-setosa           1.6          0.2           4.8          3.4        0       0.959970
+38       Iris-setosa           1.6          0.2           5.0          3.0        0       0.975318
+39       Iris-setosa           1.6          0.2           5.1          3.8        0       1.007389
+40       Iris-setosa           1.6          0.4           5.0          3.4        0       0.985953
+41       Iris-setosa           1.6          0.6           5.0          3.5        0       1.009371
+42       Iris-setosa           1.7          0.2           5.4          3.4        0       1.017839
+43       Iris-setosa           1.7          0.3           5.7          3.8        0       1.229392
+44       Iris-setosa           1.7          0.4           5.4          3.9        0       1.142450
+45       Iris-setosa           1.7          0.5           5.1          3.3        0       1.003213
+46       Iris-setosa           1.9          0.2           4.8          3.4        0       1.070735
+47       Iris-setosa           1.9          0.4           5.1          3.8        0       1.121139
+48   Iris-versicolor           3.0          1.1           5.1          2.5        1       1.508151
+49   Iris-versicolor           3.3          1.0           4.9          2.4        0       1.429921
+50   Iris-versicolor           3.3          1.0           5.0          2.3        0       1.398471
+51   Iris-versicolor           3.5          1.0           5.0          2.0        0       1.419245
+52   Iris-versicolor           3.5          1.0           5.7          2.6        0       1.103474
+53   Iris-versicolor           3.6          1.3           5.6          2.9        0       1.024787
+54   Iris-versicolor           3.7          1.0           5.5          2.4        0       1.106838
+55   Iris-versicolor           3.8          1.1           5.5          2.4        0       1.054446
+56   Iris-versicolor           3.9          1.1           5.6          2.5        0       0.995663
+57   Iris-versicolor           3.9          1.2           5.8          2.7        0       0.985898
+58   Iris-versicolor           3.9          1.4           5.2          2.7        0       1.019567
+59   Iris-versicolor           4.0          1.0           6.0          2.2        0       1.061042
+60   Iris-versicolor           4.0          1.2           5.8          2.6        0       0.988263
+61   Iris-versicolor           4.0          1.3           5.5          2.3        0       1.031658
+62   Iris-versicolor           4.0          1.3           5.5          2.5        0       0.995663
+63   Iris-versicolor           4.0          1.3           6.1          2.8        0       0.963243
+64   Iris-versicolor           4.1          1.0           5.8          2.7        0       0.984204
+65   Iris-versicolor           4.1          1.3           5.6          3.0        0       0.977756
+66   Iris-versicolor           4.1          1.3           5.7          2.8        0       0.982651
+67   Iris-versicolor           4.2          1.2           5.7          3.0        0       0.962839
+68   Iris-versicolor           4.2          1.3           5.6          2.7        0       0.991782
+69   Iris-versicolor           4.2          1.3           5.7          2.9        0       0.974096
+70   Iris-versicolor           4.2          1.5           5.9          3.0        0       0.942950
+71   Iris-versicolor           4.3          1.3           6.2          2.9        0       0.942497
+72   Iris-versicolor           4.3          1.3           6.4          2.9        0       0.985491
+73   Iris-versicolor           4.4          1.2           5.5          2.6        0       0.981085
+74   Iris-versicolor           4.4          1.3           6.3          2.3        0       1.041362
+75   Iris-versicolor           4.4          1.4           6.6          3.0        0       1.023613
+76   Iris-versicolor           4.4          1.4           6.7          3.1        0       1.044788
+77   Iris-versicolor           4.5          1.3           5.7          2.8        0       0.943719
+78   Iris-versicolor           4.5          1.5           5.4          3.0        0       1.023671
+79   Iris-versicolor           4.5          1.5           5.6          3.0        0       0.985621
+80   Iris-versicolor           4.5          1.5           6.0          2.9        0       0.969847
+81   Iris-versicolor           4.5          1.5           6.2          2.2        0       1.108614
+82   Iris-versicolor           4.5          1.5           6.4          3.2        0       1.026880
+83   Iris-versicolor           4.5          1.6           6.0          3.4        0       1.009214
+84   Iris-versicolor           4.6          1.3           6.6          2.9        0       1.034644
+85   Iris-versicolor           4.6          1.4           6.1          3.0        0       0.996620
+86   Iris-versicolor           4.6          1.5           6.5          2.8        0       1.033736
+87   Iris-versicolor           4.7          1.2           6.1          2.8        0       0.983581
+88   Iris-versicolor           4.7          1.4           6.1          2.9        0       0.995033
+89   Iris-versicolor           4.7          1.4           7.0          3.2        0       1.182751
+90   Iris-versicolor           4.7          1.5           6.7          3.1        0       1.040173
+91   Iris-versicolor           4.7          1.6           6.3          3.3        0       1.033702
+92   Iris-versicolor           4.8          1.4           6.8          2.8        0       1.062937
+93   Iris-versicolor           4.8          1.8           5.9          3.2        0       1.064016
+94   Iris-versicolor           4.9          1.5           6.3          2.5        0       1.041084
+95   Iris-versicolor           4.9          1.5           6.9          3.1        0       1.141509
+96   Iris-versicolor           5.0          1.7           6.7          3.0        0       1.104480
+97   Iris-versicolor           5.1          1.6           6.0          2.7        0       1.069704
+98    Iris-virginica           4.5          1.7           4.9          2.5        1       1.721213
+99    Iris-virginica           4.8          1.8           6.0          3.0        0       1.052340
+100   Iris-virginica           4.8          1.8           6.2          2.8        0       1.038901
+101   Iris-virginica           4.9          1.8           6.1          3.0        0       1.009995
+102   Iris-virginica           4.9          1.8           6.3          2.7        0       1.018945
+103   Iris-virginica           4.9          2.0           5.6          2.8        0       1.161046
+104   Iris-virginica           5.0          1.5           6.0          2.2        0       1.173425
+105   Iris-virginica           5.0          1.9           6.3          2.5        0       1.024975
+106   Iris-virginica           5.0          2.0           5.7          2.5        0       1.137768
+107   Iris-virginica           5.1          1.5           6.3          2.8        0       1.024466
+108   Iris-virginica           5.1          1.8           5.9          3.0        0       1.015508
+109   Iris-virginica           5.1          1.9           5.8          2.7        0       1.060170
+110   Iris-virginica           5.1          2.0           6.5          3.2        0       0.978982
+111   Iris-virginica           5.1          2.3           6.9          3.1        0       1.004910
+112   Iris-virginica           5.1          2.4           5.8          2.8        0       1.083699
+113   Iris-virginica           5.2          2.0           6.5          3.0        0       0.974762
+114   Iris-virginica           5.2          2.3           6.7          3.0        0       0.964671
+115   Iris-virginica           5.3          1.9           6.4          2.7        0       0.988229
+116   Iris-virginica           5.3          2.3           6.4          3.2        0       0.966107
+117   Iris-virginica           5.4          2.1           6.9          3.1        0       0.967557
+118   Iris-virginica           5.4          2.3           6.2          3.4        0       0.990934
+119   Iris-virginica           5.5          1.8           6.4          3.1        0       0.973885
+120   Iris-virginica           5.5          1.8           6.5          3.0        0       0.968404
+121   Iris-virginica           5.5          2.1           6.8          3.0        0       0.965933
+122   Iris-virginica           5.6          1.4           6.1          2.6        0       1.071657
+123   Iris-virginica           5.6          1.8           6.3          2.9        0       0.968500
+124   Iris-virginica           5.6          2.1           6.4          2.8        0       0.959731
+125   Iris-virginica           5.6          2.2           6.4          2.8        0       0.966631
+126   Iris-virginica           5.6          2.4           6.3          3.4        0       0.997976
+127   Iris-virginica           5.6          2.4           6.7          3.1        0       0.990454
+128   Iris-virginica           5.7          2.1           6.7          3.3        0       0.985379
+129   Iris-virginica           5.7          2.3           6.9          3.2        0       1.017919
+130   Iris-virginica           5.7          2.5           6.7          3.3        0       1.024337
+131   Iris-virginica           5.8          1.6           7.2          3.0        0       1.142635
+132   Iris-virginica           5.8          1.8           6.7          2.5        0       1.046230
+133   Iris-virginica           5.8          2.2           6.5          3.0        0       0.982251
+134   Iris-virginica           5.9          2.1           7.1          3.0        0       1.049305
+135   Iris-virginica           5.9          2.3           6.8          3.2        0       1.020171
+136   Iris-virginica           6.0          1.8           7.2          3.2        0       1.127785
+137   Iris-virginica           6.0          2.5           6.3          3.3        0       1.100838
+138   Iris-virginica           6.1          1.9           7.4          2.8        0       1.232451
+139   Iris-virginica           6.1          2.3           7.7          3.0        0       1.295242
+140   Iris-virginica           6.1          2.5           7.2          3.6        0       1.210310
+141   Iris-virginica           6.3          1.8           7.3          2.9        0       1.254868
+142   Iris-virginica           6.4          2.0           7.9          3.8        1       1.535902
+143   Iris-virginica           6.6          2.1           7.6          3.0        0       1.389117
+144   Iris-virginica           6.7          2.0           7.7          2.8        1       1.479701
+145   Iris-virginica           6.7          2.2           7.7          3.8        1       1.561421
+146   Iris-virginica           6.9          2.3           7.7          2.6        1       1.611981
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -758,15 +1474,6 @@ Outlier pada PetalWidthCm: 0 data
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="bisnis_understanding.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Bisnis Understanding</p>
-      </div>
-    </a>
     <a class="right-next"
        href="explorasi.html"
        title="next page">

@@ -25,38 +25,28 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df = pd.read_csv("/content/Iris.csv", sep=";")
+import pandas as pd
 
-# tampilkan info dataset
-print(df.head())
-print("\nInfo Dataset:")
-print(df.info())
+# Baca dataset hasil deteksi KNN
+df_knn = pd.read_csv("KNN.csv")
 
-# ringkasan tipe data
-data_types = pd.DataFrame({
-    "Kolom": df.columns,
-    "Tipe Data": [str(dtype) for dtype in df.dtypes],
-    "Deskripsi": [
-        "ID unik" if col == "Id" else
-        "Panjang sepal (cm)" if col == "SepalLengthCm" else
-        "Lebar sepal (cm)" if col == "SepalWidthCm" else
-        "Panjang petal (cm)" if col == "PetalLengthCm" else
-        "Lebar petal (cm)" if col == "PetalWidthCm" else
-        "Jenis bunga iris (Setosa, Versicolor, Virginica)"
-        for col in df.columns
-    ]
-})
-print("\nRingkasan Tipe Data:\n", data_types)
+# Hapus outlier (Anomaly = 1)
+df_knn_clean = df_knn[df_knn['Anomaly'] == 0]
+
+print("Dataset KNN setelah outlier dihapus:")
+print(df_knn_clean.to_string())
 
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mFileNotFoundError[39m                         Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m df = [43mpd[49m[43m.[49m[43mread_csv[49m[43m([49m[33;43m"[39;49m[33;43m/content/Iris.csv[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43msep[49m[43m=[49m[33;43m"[39;49m[33;43m;[39;49m[33;43m"[39;49m[43m)[49m
-[32m      3[39m [38;5;66;03m# tampilkan info dataset[39;00m
-[32m      4[39m [38;5;28mprint[39m(df.head())
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 4[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
+[32m      3[39m [38;5;66;03m# Baca dataset hasil deteksi KNN[39;00m
+[32m----> [39m[32m4[39m df_knn = [43mpd[49m[43m.[49m[43mread_csv[49m[43m([49m[33;43m"[39;49m[33;43mKNN.csv[39;49m[33;43m"[39;49m[43m)[49m
+[32m      6[39m [38;5;66;03m# Hapus outlier (Anomaly = 1)[39;00m
+[32m      7[39m df_knn_clean = df_knn[df_knn[[33m'[39m[33mAnomaly[39m[33m'[39m] == [32m0[39m]
 
 [36mFile [39m[32m~/.local/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026[39m, in [36mread_csv[39m[34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[39m
 [32m   1013[39m kwds_defaults = _refine_defaults_read(
@@ -112,5 +102,5 @@ print("\nRingkasan Tipe Data:\n", data_types)
 [32m    881[39m         [38;5;66;03m# Binary mode[39;00m
 [32m    882[39m         handle = [38;5;28mopen[39m(handle, ioargs.mode)
 
-[31mFileNotFoundError[39m: [Errno 2] No such file or directory: '/content/Iris.csv'
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'KNN.csv'
 
